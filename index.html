@@ -1,0 +1,1020 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finora Finance | Home Loans, Car Loans & Personal Loans</title>
+    <meta name="description" content="Explore flexible home loans, car loans, personal loans, business loans and other financial solutions with professional assistance at Finora Finance.">
+    <meta name="keywords" content="Finora Finance, Home Loan, Personal Loan, Car Loan, Business Loan, EMI Calculator, Financial Services India">
+    <meta property="og:title" content="Finora Finance | Smart Finance. Better Future.">
+    <meta property="og:description" content="Get personalized loan assistance with simple documentation, transparent guidance and dedicated support from our financial experts.">
+    <meta property="og:type" content="website">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- AOS Animation -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+    <!-- LIGHTWEIGHT PAGE LOADER -->
+    <div id="page-loader">
+        <div class="loader-logo">FINORA <span>FINANCE</span></div>
+        <div class="loader-bar"><div class="loader-progress"></div></div>
+    </div>
+
+    <!-- SCROLL PROGRESS INDICATOR -->
+    <div id="scroll-progress"></div>
+
+    <!-- TOAST CONTAINER -->
+    <div id="toast-container"></div>
+
+    <!-- STICKY NAVBAR -->
+    <nav class="navbar-finora" id="mainNavbar">
+        <div class="container nav-container">
+            <a class="brand-link" href="#home">
+                <div class="brand-icon"><i class="fa-solid fa-chart-line"></i></div>
+                <div>
+                    FINORA
+                    <span class="brand-sub">FINANCE</span>
+                </div>
+            </a>
+            
+            <button class="hamburger-btn" id="hamburgerBtn" onclick="toggleMobileNav()">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+
+            <div class="nav-links-wrapper" id="navLinks">
+                <a class="nav-link-item active" href="#home" onclick="closeMobileNav()">Home</a>
+                <a class="nav-link-item" href="#about" onclick="closeMobileNav()">About</a>
+                <a class="nav-link-item" href="#loans" onclick="closeMobileNav()">Loans</a>
+                <a class="nav-link-item" href="#calculator" onclick="closeMobileNav()">EMI Calculator</a>
+                <a class="nav-link-item" href="#why-us" onclick="closeMobileNav()">Why Us</a>
+                <a class="nav-link-item" href="#testimonials" onclick="closeMobileNav()">Testimonials</a>
+                <a class="nav-link-item" href="#faq" onclick="closeMobileNav()">FAQs</a>
+                <a class="nav-link-item" href="#contact" onclick="closeMobileNav()">Contact</a>
+            </div>
+
+            <div class="d-none d-lg-block">
+                <button class="btn btn-accent" onclick="openEnquiryModal('General Loan')">
+                    <i class="fa-solid fa-paper-plane"></i> Apply for Loan
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section class="hero-section" id="home">
+        <div class="container">
+            <div class="row align-items-center">
+                <!-- Left Hero Content -->
+                <div class="col-lg-6" data-aos="fade-right">
+                    <div class="badge-trust">
+                        <i class="fa-solid fa-shield-halved"></i> Trusted Financial Solutions
+                    </div>
+                    <h1 class="hero-title">
+                        Turn Your Financial Plans Into Reality with <span class="text-gradient">Fast & Flexible Loans</span>
+                    </h1>
+                    <p class="hero-subtitle">
+                        Get personalized loan assistance with simple documentation, transparent guidance, and dedicated support from our financial experts across India.
+                    </p>
+                    <div style="display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 30px;">
+                        <button class="btn btn-accent" onclick="openEnquiryModal('General Loan')">
+                            Apply for Loan <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+                        <a href="#loans" class="btn btn-outline-light">
+                            Explore Loans
+                        </a>
+                    </div>
+                    <div class="hero-trust-grid">
+                        <div class="hero-trust-item"><i class="fa-solid fa-circle-check"></i> Quick Assistance</div>
+                        <div class="hero-trust-item"><i class="fa-solid fa-circle-check"></i> Simple Documentation</div>
+                        <div class="hero-trust-item"><i class="fa-solid fa-circle-check"></i> Transparent Process</div>
+                        <div class="hero-trust-item"><i class="fa-solid fa-circle-check"></i> Dedicated Support</div>
+                    </div>
+                </div>
+
+                <!-- Right Hero Floating Card & Form -->
+                <div class="col-lg-6" data-aos="fade-left">
+                    <div class="hero-card-wrapper">
+                        <!-- Floating Badges -->
+                        <div class="floating-badge floating-badge-1">
+                            <i class="fa-solid fa-bolt text-warning" style="color:var(--accent);"></i> Fast Approval
+                        </div>
+                        <div class="floating-badge floating-badge-2">
+                            <i class="fa-solid fa-lock" style="color:#38bdf8;"></i> 100% Confidential
+                        </div>
+
+                        <div class="hero-float-card">
+                            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                                <h3 style="color: var(--white); margin: 0;">Loan Enquiry</h3>
+                                <span style="background: var(--accent); color: var(--dark-text); padding: 4px 12px; border-radius: 20px; font-size: 0.8rem; font-weight: 700;">Instant Assistance</span>
+                            </div>
+                            <form id="heroForm" class="form-dark" onsubmit="handleFormSubmit(event, 'Hero Form')">
+                                <div class="form-grid">
+                                    <div>
+                                        <label>Full Name *</label>
+                                        <input type="text" name="fullName" placeholder="Rahul Sharma" required>
+                                    </div>
+                                    <div>
+                                        <label>Mobile Number *</label>
+                                        <input type="tel" name="mobile" placeholder="9876543210" pattern="[0-9]{10}" required>
+                                    </div>
+                                    <div>
+                                        <label>Email Address *</label>
+                                        <input type="email" name="email" placeholder="rahul@example.com" required>
+                                    </div>
+                                    <div>
+                                        <label>Loan Type *</label>
+                                        <select name="loanType" required>
+                                            <option value="Home Loan">Home Loan</option>
+                                            <option value="Car Loan">Car Loan</option>
+                                            <option value="Personal Loan">Personal Loan</option>
+                                            <option value="Business Loan">Business Loan</option>
+                                            <option value="Education Loan">Education Loan</option>
+                                            <option value="Loan Against Property">Loan Against Property</option>
+                                            <option value="Gold Loan">Gold Loan</option>
+                                            <option value="Other">Other Loan</option>
+                                        </select>
+                                    </div>
+                                    <div>
+                                        <label>Required Amount (₹) *</label>
+                                        <input type="number" name="amount" placeholder="e.g. 500000" required>
+                                    </div>
+                                    <div>
+                                        <label>City *</label>
+                                        <input type="text" name="city" placeholder="Mumbai" required>
+                                    </div>
+                                    <div>
+                                        <label>Employment</label>
+                                        <select name="employment">
+                                            <option value="Salaried">Salaried</option>
+                                            <option value="Self-Employed">Self-Employed</option>
+                                            <option value="Business Owner">Business Owner</option>
+                                        </select>
+                                    </div>
+                                    <div>
+                                        <label>Monthly Income (₹)</label>
+                                        <input type="number" name="income" placeholder="e.g. 60000">
+                                    </div>
+                                    <div class="form-group-full" style="margin-top: 10px;">
+                                        <button type="submit" class="btn btn-accent" style="width: 100%;">
+                                            <i class="fa-brands fa-whatsapp"></i> Submit & Chat on WhatsApp
+                                        </button>
+                                    </div>
+                                </div>
+                                <p style="text-align: center; color: rgba(255,255,255,0.6); font-size: 0.8rem; margin-top: 12px; margin-bottom: 0;">
+                                    <i class="fa-solid fa-shield"></i> Secure & Confidential • No Obligation
+                                </p>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TRUST STATISTICS -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="stats-grid" id="counterStats">
+                <div data-aos="zoom-in">
+                    <div class="stat-number" data-target="10000">0</div>
+                    <div class="stat-label">Happy Customers</div>
+                </div>
+                <div data-aos="zoom-in" data-aos-delay="100">
+                    <div class="stat-number" data-target="100">₹0</div>
+                    <div class="stat-label">Cr+ Loans Assisted</div>
+                </div>
+                <div data-aos="zoom-in" data-aos-delay="200">
+                    <div class="stat-number" data-target="15">0</div>
+                    <div class="stat-label">Years Experience</div>
+                </div>
+                <div data-aos="zoom-in" data-aos-delay="300">
+                    <div class="stat-number" data-target="98">0</div>
+                    <div class="stat-label">% Customer Satisfaction</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section class="about-section" id="about">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6" data-aos="fade-right">
+                    <div class="about-graphic-card">
+                        <div style="display: flex; gap: 10px; align-items: center;">
+                            <div style="width: 12px; height: 12px; background: #ef4444; border-radius: 50%;"></div>
+                            <div style="width: 12px; height: 12px; background: #f59e0b; border-radius: 50%;"></div>
+                            <div style="width: 12px; height: 12px; background: #10b981; border-radius: 50%;"></div>
+                            <span style="font-size: 0.8rem; color: rgba(255,255,255,0.6); margin-left: 10px;">Finora Advisory Dashboard</span>
+                        </div>
+                        <div style="margin: 30px 0;">
+                            <h3 style="color: var(--accent); font-size: 2rem; margin-bottom: 10px;">Trusted Advisory</h3>
+                            <p style="color: rgba(255,255,255,0.85); font-size: 1.05rem;">
+                                Bridging the gap between your aspirations and financial success with transparent guidance & expert loan consultation.
+                            </p>
+                        </div>
+                        <div style="background: rgba(255,255,255,0.08); padding: 20px; border-radius: 16px; border: 1px solid rgba(255,255,255,0.15); display: flex; align-items: center; justify-content: space-between;">
+                            <div>
+                                <div style="font-size: 0.8rem; color: rgba(255,255,255,0.7);">Total Assisted Volume</div>
+                                <div style="font-size: 1.5rem; font-weight: 800; color: var(--white);">₹100+ Crores</div>
+                            </div>
+                            <i class="fa-solid fa-award" style="font-size: 2.2rem; color: var(--accent);"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6" data-aos="fade-left">
+                    <span class="section-subtitle">About Finora Finance</span>
+                    <h2 class="section-title">Your Trusted Partner for Financial Solutions</h2>
+                    <p style="color: var(--muted-text); margin-bottom: 24px; font-size: 1.05rem;">
+                        At Finora Finance, we understand that securing the right loan can empower your financial journey. Whether purchasing your dream home, expanding your business, or buying a car, our experts provide end-to-end guidance tailored to your needs.
+                    </p>
+
+                    <div class="about-feature-item">
+                        <div class="about-feature-icon"><i class="fa-solid fa-user-tie"></i></div>
+                        <div>
+                            <h4 style="margin-bottom: 4px;">Professional Guidance</h4>
+                            <p style="color: var(--muted-text); font-size: 0.925rem;">Expert loan advisors helping you compare and choose suitable options.</p>
+                        </div>
+                    </div>
+
+                    <div class="about-feature-item">
+                        <div class="about-feature-icon"><i class="fa-solid fa-file-shield"></i></div>
+                        <div>
+                            <h4 style="margin-bottom: 4px;">100% Transparent Process</h4>
+                            <p style="color: var(--muted-text); font-size: 0.925rem;">No hidden charges, clear terms, and step-by-step updates on your application.</p>
+                        </div>
+                    </div>
+
+                    <div class="about-feature-item">
+                        <div class="about-feature-icon"><i class="fa-solid fa-handshake"></i></div>
+                        <div>
+                            <h4 style="margin-bottom: 4px;">Multiple Loan Products</h4>
+                            <p style="color: var(--muted-text); font-size: 0.925rem;">Solutions for personal, business, education, housing, and property requirements.</p>
+                        </div>
+                    </div>
+
+                    <button class="btn btn-primary" onclick="openEnquiryModal('General Loan')" style="margin-top: 10px;">
+                        Know More About Us <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- LOAN PRODUCTS SECTION -->
+    <section class="loans-section" id="loans">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-subtitle">Our Financial Solutions</span>
+                <h2 class="section-title">Explore Tailored Loan Products</h2>
+                <p class="section-desc">Choose from our wide array of customizable loan products designed to meet your every life goal.</p>
+            </div>
+
+            <div class="loans-grid">
+                <!-- Home Loan -->
+                <div class="loan-card" data-aos="fade-up">
+                    <div class="loan-icon-box"><i class="fa-solid fa-house-chimney"></i></div>
+                    <h3 class="loan-title">Home Loan</h3>
+                    <p class="loan-desc">Finance your dream house or construct property with low EMI options and long repayment tenures.</p>
+                    <div class="loan-meta">
+                        <div class="loan-meta-item"><span>Min. Amount</span><strong>₹2 Lakh</strong></div>
+                        <div class="loan-meta-item"><span>Max Tenure</span><strong>30 Years</strong></div>
+                    </div>
+                    <button class="btn btn-primary" style="width: 100%;" onclick="showLoanDetails('home')">
+                        View Details <i class="fa-solid fa-chevron-right"></i>
+                    </button>
+                </div>
+
+                <!-- Car Loan -->
+                <div class="loan-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="loan-icon-box"><i class="fa-solid fa-car"></i></div>
+                    <h3 class="loan-title">Car Loan</h3>
+                    <p class="loan-desc">Drive home your favourite luxury or budget vehicle with quick approval and competitive rates.</p>
+                    <div class="loan-meta">
+                        <div class="loan-meta-item"><span>Min. Amount</span><strong>₹1 Lakh</strong></div>
+                        <div class="loan-meta-item"><span>Max Tenure</span><strong>7 Years</strong></div>
+                    </div>
+                    <button class="btn btn-primary" style="width: 100%;" onclick="showLoanDetails('car')">
+                        View Details <i class="fa-solid fa-chevron-right"></i>
+                    </button>
+                </div>
+
+                <!-- Personal Loan -->
+                <div class="loan-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="loan-icon-box"><i class="fa-solid fa-wallet"></i></div>
+                    <h3 class="loan-title">Personal Loan</h3>
+                    <p class="loan-desc">Fulfill personal expenses, medical emergencies, weddings, or travel with minimal paperwork.</p>
+                    <div class="loan-meta">
+                        <div class="loan-meta-item"><span>Min. Amount</span><strong>₹50,000</strong></div>
+                        <div class="loan-meta-item"><span>Max Tenure</span><strong>5 Years</strong></div>
+                    </div>
+                    <button class="btn btn-primary" style="width: 100%;" onclick="showLoanDetails('personal')">
+                        View Details <i class="fa-solid fa-chevron-right"></i>
+                    </button>
+                </div>
+
+                <!-- Business Loan -->
+                <div class="loan-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="loan-icon-box"><i class="fa-solid fa-briefcase"></i></div>
+                    <h3 class="loan-title">Business Loan</h3>
+                    <p class="loan-desc">Fuel your business expansion, working capital needs, or equipment purchase with ease.</p>
+                    <div class="loan-meta">
+                        <div class="loan-meta-item"><span>Min. Amount</span><strong>₹2 Lakh</strong></div>
+                        <div class="loan-meta-item"><span>Max Tenure</span><strong>10 Years</strong></div>
+                    </div>
+                    <button class="btn btn-primary" style="width: 100%;" onclick="showLoanDetails('business')">
+                        View Details <i class="fa-solid fa-chevron-right"></i>
+                    </button>
+                </div>
+
+                <!-- Education Loan -->
+                <div class="loan-card" data-aos="fade-up">
+                    <div class="loan-icon-box"><i class="fa-solid fa-graduation-cap"></i></div>
+                    <h3 class="loan-title">Education Loan</h3>
+                    <p class="loan-desc">Empower higher education aspirations in India or abroad with student-friendly terms.</p>
+                    <div class="loan-meta">
+                        <div class="loan-meta-item"><span>Min. Amount</span><strong>₹1 Lakh</strong></div>
+                        <div class="loan-meta-item"><span>Max Tenure</span><strong>15 Years</strong></div>
+                    </div>
+                    <button class="btn btn-primary" style="width: 100%;" onclick="showLoanDetails('education')">
+                        View Details <i class="fa-solid fa-chevron-right"></i>
+                    </button>
+                </div>
+
+                <!-- Loan Against Property -->
+                <div class="loan-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="loan-icon-box"><i class="fa-solid fa-building-user"></i></div>
+                    <h3 class="loan-title">Loan Against Property</h3>
+                    <p class="loan-desc">Unlock high-value funding against residential or commercial property at low rates.</p>
+                    <div class="loan-meta">
+                        <div class="loan-meta-item"><span>Min. Amount</span><strong>₹5 Lakh</strong></div>
+                        <div class="loan-meta-item"><span>Max Tenure</span><strong>20 Years</strong></div>
+                    </div>
+                    <button class="btn btn-primary" style="width: 100%;" onclick="showLoanDetails('property')">
+                        View Details <i class="fa-solid fa-chevron-right"></i>
+                    </button>
+                </div>
+
+                <!-- Gold Loan -->
+                <div class="loan-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="loan-icon-box"><i class="fa-solid fa-coins"></i></div>
+                    <h3 class="loan-title">Gold Loan</h3>
+                    <p class="loan-desc">Get instant cash assistance against gold ornaments with full security and minimum interest.</p>
+                    <div class="loan-meta">
+                        <div class="loan-meta-item"><span>Min. Amount</span><strong>₹25,000</strong></div>
+                        <div class="loan-meta-item"><span>Max Tenure</span><strong>3 Years</strong></div>
+                    </div>
+                    <button class="btn btn-primary" style="width: 100%;" onclick="showLoanDetails('gold')">
+                        View Details <i class="fa-solid fa-chevron-right"></i>
+                    </button>
+                </div>
+
+                <!-- Other Financial Solutions -->
+                <div class="loan-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="loan-icon-box"><i class="fa-solid fa-money-bill-transfer"></i></div>
+                    <h3 class="loan-title">Other Solutions</h3>
+                    <p class="loan-desc">Custom financial assistance, balance transfers, top-up loans, and specialized funding.</p>
+                    <div class="loan-meta">
+                        <div class="loan-meta-item"><span>Custom Loan</span><strong>Flexible</strong></div>
+                        <div class="loan-meta-item"><span>Support</span><strong>24/7</strong></div>
+                    </div>
+                    <button class="btn btn-primary" style="width: 100%;" onclick="openEnquiryModal('Other Loan')">
+                        Enquire Now <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- EMI CALCULATOR SECTION -->
+    <section class="calculator-section" id="calculator">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-subtitle">Financial Planning</span>
+                <h2 class="section-title">Interactive EMI Calculator</h2>
+                <p class="section-desc">Plan your repayment schedule in seconds. Calculate your monthly instalment instantly.</p>
+            </div>
+
+            <div class="calc-card" data-aos="zoom-in">
+                <!-- Inputs -->
+                <div>
+                    <div class="calc-input-group">
+                        <div class="calc-label-header">
+                            <span>Loan Amount (₹)</span>
+                            <span class="calc-value-badge" id="calcAmountLabel">₹ 5,00,000</span>
+                        </div>
+                        <input type="range" id="calcAmount" min="50000" max="10000000" step="50000" value="500000" oninput="calculateEMI()">
+                    </div>
+
+                    <div class="calc-input-group">
+                        <div class="calc-label-header">
+                            <span>Interest Rate (% p.a.)</span>
+                            <span class="calc-value-badge" id="calcRateLabel">10.5 %</span>
+                        </div>
+                        <input type="range" id="calcRate" min="7" max="24" step="0.25" value="10.5" oninput="calculateEMI()">
+                    </div>
+
+                    <div class="calc-input-group">
+                        <div class="calc-label-header">
+                            <span>Loan Tenure (Years)</span>
+                            <span class="calc-value-badge" id="calcTenureLabel">5 Years</span>
+                        </div>
+                        <input type="range" id="calcTenure" min="1" max="30" step="1" value="5" oninput="calculateEMI()">
+                    </div>
+
+                    <div style="background: var(--light); padding: 16px; border-radius: 12px; margin-top: 20px; font-size: 0.85rem; color: var(--muted-text);">
+                        <i class="fa-solid fa-circle-info me-1" style="color: var(--secondary);"></i>
+                        Estimates are indicative. Actual rates vary based on borrower credit profile & lender policies.
+                    </div>
+                </div>
+
+                <!-- Result Box -->
+                <div class="calc-result-box">
+                    <div>
+                        <span style="font-size: 0.9rem; color: rgba(255,255,255,0.75); display: block;">Calculated Monthly EMI</span>
+                        <div class="emi-amount-display" id="resEMI">₹ 10,747</div>
+
+                        <div class="result-row">
+                            <span>Principal Amount</span>
+                            <strong id="resPrincipal">₹ 5,00,000</strong>
+                        </div>
+                        <div class="result-row">
+                            <span>Total Interest</span>
+                            <strong id="resInterest" style="color: var(--accent);">₹ 1,44,817</strong>
+                        </div>
+                        <div class="result-row" style="border-bottom: none;">
+                            <span>Total Payable</span>
+                            <strong id="resTotal">₹ 6,44,817</strong>
+                        </div>
+                    </div>
+
+                    <button class="btn btn-accent" style="width: 100%; margin-top: 20px;" onclick="applyFromCalculator()">
+                        Apply With This Amount <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WHY CHOOSE US -->
+    <section class="why-section" id="why-us">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-subtitle" style="color: var(--accent);">The Finora Advantage</span>
+                <h2 class="section-title" style="color: var(--white);">Why Thousands Choose Finora Finance</h2>
+                <p class="section-desc" style="color: rgba(255,255,255,0.75);">We make securing financial loans simple, fast, and completely stress-free.</p>
+            </div>
+
+            <div class="why-grid">
+                <div class="why-card" data-aos="fade-up">
+                    <div class="why-icon"><i class="fa-solid fa-bolt"></i></div>
+                    <h3 style="font-size: 1.2rem; color: var(--white); margin-bottom: 10px;">Fast Assistance</h3>
+                    <p style="color: rgba(255,255,255,0.7); font-size: 0.9rem;">Quick application evaluation and minimal waiting time for consultation.</p>
+                </div>
+
+                <div class="why-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="why-icon"><i class="fa-solid fa-scale-balanced"></i></div>
+                    <h3 style="font-size: 1.2rem; color: var(--white); margin-bottom: 10px;">Transparent Process</h3>
+                    <p style="color: rgba(255,255,255,0.7); font-size: 0.9rem;">Complete clarity on processing terms, documentation, and lender details.</p>
+                </div>
+
+                <div class="why-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="why-icon"><i class="fa-solid fa-cubes"></i></div>
+                    <h3 style="font-size: 1.2rem; color: var(--white); margin-bottom: 10px;">Multiple Loan Options</h3>
+                    <p style="color: rgba(255,255,255,0.7); font-size: 0.9rem;">Wide portfolio of tailored products across home, personal, and business needs.</p>
+                </div>
+
+                <div class="why-card" data-aos="fade-up">
+                    <div class="why-icon"><i class="fa-solid fa-user-gear"></i></div>
+                    <h3 style="font-size: 1.2rem; color: var(--white); margin-bottom: 10px;">Personalized Guidance</h3>
+                    <p style="color: rgba(255,255,255,0.7); font-size: 0.9rem;">Dedicated loan advisor assigned to assist you through every step.</p>
+                </div>
+
+                <div class="why-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="why-icon"><i class="fa-solid fa-shield-halved"></i></div>
+                    <h3 style="font-size: 1.2rem; color: var(--white); margin-bottom: 10px;">Secure Information</h3>
+                    <p style="color: rgba(255,255,255,0.7); font-size: 0.9rem;">Strict privacy compliance. Your data remains 100% confidential and safe.</p>
+                </div>
+
+                <div class="why-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="why-icon"><i class="fa-solid fa-headset"></i></div>
+                    <h3 style="font-size: 1.2rem; color: var(--white); margin-bottom: 10px;">Dedicated Support</h3>
+                    <p style="color: rgba(255,255,255,0.7); font-size: 0.9rem;">Prompt customer help desk to resolve queries and assist documentation.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- HOW IT WORKS TIMELINE -->
+    <section class="process-section">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-subtitle">Simple 4-Step Process</span>
+                <h2 class="section-title">How It Works</h2>
+                <p class="section-desc">Experience a hassle-free loan journey from inquiry to loan assistance.</p>
+            </div>
+
+            <div class="process-grid">
+                <div class="process-step" data-aos="fade-up">
+                    <div class="step-num">01</div>
+                    <h4 style="margin-bottom: 8px;">Submit Enquiry</h4>
+                    <p style="color: var(--muted-text); font-size: 0.875rem;">Fill out our quick online form or connect via WhatsApp with your loan requirement.</p>
+                </div>
+
+                <div class="process-step" data-aos="fade-up" data-aos-delay="100">
+                    <div class="step-num">02</div>
+                    <h4 style="margin-bottom: 8px;">Eligibility Check</h4>
+                    <p style="color: var(--muted-text); font-size: 0.875rem;">Our expert advisor evaluates your requirement and checks preliminary eligibility.</p>
+                </div>
+
+                <div class="process-step" data-aos="fade-up" data-aos-delay="200">
+                    <div class="step-num">03</div>
+                    <h4 style="margin-bottom: 8px;">Document Verification</h4>
+                    <p style="color: var(--muted-text); font-size: 0.875rem;">Simple verification of KYC, income statements, and basic mandatory documents.</p>
+                </div>
+
+                <div class="process-step" data-aos="fade-up" data-aos-delay="300">
+                    <div class="step-num">04</div>
+                    <h4 style="margin-bottom: 8px;">Loan Assistance</h4>
+                    <p style="color: var(--muted-text); font-size: 0.875rem;">Complete support until successful processing and loan approval assistance.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- DOCUMENTS REQUIRED -->
+    <section class="doc-section">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-subtitle">Hassle-Free Verification</span>
+                <h2 class="section-title">Basic Documents Required</h2>
+                <p class="section-desc">Keep these essential documents handy for a fast and smooth approval workflow.</p>
+            </div>
+
+            <div class="doc-grid">
+                <div class="doc-card" data-aos="fade-up">
+                    <div class="doc-icon"><i class="fa-solid fa-address-card"></i></div>
+                    <div>
+                        <h4 style="font-size: 1rem; margin-bottom: 2px;">Identity Proof</h4>
+                        <p style="font-size: 0.85rem; color: var(--muted-text); margin: 0;">Aadhaar Card, PAN Card, Passport, or Voter ID</p>
+                    </div>
+                </div>
+
+                <div class="doc-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="doc-icon"><i class="fa-solid fa-location-dot"></i></div>
+                    <div>
+                        <h4 style="font-size: 1rem; margin-bottom: 2px;">Address Proof</h4>
+                        <p style="font-size: 0.85rem; color: var(--muted-text); margin: 0;">Electricity Bill, Passport, Rent Agreement, or Utility Bill</p>
+                    </div>
+                </div>
+
+                <div class="doc-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="doc-icon"><i class="fa-solid fa-receipt"></i></div>
+                    <div>
+                        <h4 style="font-size: 1rem; margin-bottom: 2px;">Income Proof</h4>
+                        <p style="font-size: 0.85rem; color: var(--muted-text); margin: 0;">Salary Slips (3 Months) or ITR Returns (2 Years)</p>
+                    </div>
+                </div>
+
+                <div class="doc-card" data-aos="fade-up">
+                    <div class="doc-icon"><i class="fa-solid fa-piggy-bank"></i></div>
+                    <div>
+                        <h4 style="font-size: 1rem; margin-bottom: 2px;">Bank Statements</h4>
+                        <p style="font-size: 0.85rem; color: var(--muted-text); margin: 0;">Last 6 months bank statement showing regular income</p>
+                    </div>
+                </div>
+
+                <div class="doc-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="doc-icon"><i class="fa-solid fa-briefcase"></i></div>
+                    <div>
+                        <h4 style="font-size: 1rem; margin-bottom: 2px;">Employment Proof</h4>
+                        <p style="font-size: 0.85rem; color: var(--muted-text); margin: 0;">Employee ID Card, Appointment Letter or GST Registration</p>
+                    </div>
+                </div>
+
+                <div class="doc-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="doc-icon"><i class="fa-solid fa-building"></i></div>
+                    <div>
+                        <h4 style="font-size: 1rem; margin-bottom: 2px;">Property Documents</h4>
+                        <p style="font-size: 0.85rem; color: var(--muted-text); margin: 0;">Title deeds, agreement to sale (For Property/Home Loans)</p>
+                    </div>
+                </div>
+            </div>
+
+            <p style="text-align: center; color: var(--muted-text); font-size: 0.85rem; margin-top: 30px;">
+                * Document requirements may vary depending on loan category, amount, and specific lender policies.
+            </p>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS SECTION -->
+    <section class="testimonial-section" id="testimonials">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-subtitle" style="color: var(--accent);">Customer Reviews</span>
+                <h2 class="section-title" style="color: var(--white);">What Our Clients Say</h2>
+                <p class="section-desc" style="color: rgba(255,255,255,0.75);">Read genuine feedback from customers who successfully secured financing through Finora Finance.</p>
+            </div>
+
+            <div class="testimonial-grid">
+                <div class="testimonial-card" data-aos="fade-up">
+                    <div>
+                        <div class="star-rating"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                        <p style="color: rgba(255,255,255,0.85); font-style: italic; margin-bottom: 20px;">
+                            "Finora Finance guided me seamlessly through my Home Loan application. Their team was super transparent and handled documentation effortlessly!"
+                        </p>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 14px;">
+                        <div class="customer-avatar-box">RS</div>
+                        <div>
+                            <strong style="color: var(--white); display: block;">Rajesh Sharma</strong>
+                            <span style="font-size: 0.8rem; color: rgba(255,255,255,0.6);">Home Loan • Mumbai</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card" data-aos="fade-up" data-aos-delay="100">
+                    <div>
+                        <div class="star-rating"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                        <p style="color: rgba(255,255,255,0.85); font-style: italic; margin-bottom: 20px;">
+                            "Got my Business Loan assistance within 48 hours. Excellent service, responsive advisors, and smooth WhatsApp consultation."
+                        </p>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 14px;">
+                        <div class="customer-avatar-box">PP</div>
+                        <div>
+                            <strong style="color: var(--white); display: block;">Pooja Patel</strong>
+                            <span style="font-size: 0.8rem; color: rgba(255,255,255,0.6);">Business Loan • Ahmedabad</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card" data-aos="fade-up" data-aos-delay="200">
+                    <div>
+                        <div class="star-rating"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                        <p style="color: rgba(255,255,255,0.85); font-style: italic; margin-bottom: 20px;">
+                            "I needed an urgent Personal Loan for medical expenses. Finora Finance helped me explore options quickly with full confidentiality."
+                        </p>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 14px;">
+                        <div class="customer-avatar-box">VK</div>
+                        <div>
+                            <strong style="color: var(--white); display: block;">Vikram Kapoor</strong>
+                            <span style="font-size: 0.8rem; color: rgba(255,255,255,0.6);">Personal Loan • Delhi</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FINANCIAL NETWORK -->
+    <section class="network-section">
+        <div class="container text-center">
+            <span style="display: block; font-size: 0.85rem; font-weight: 700; color: var(--muted-text); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 20px;">
+                Our Financial Network & Advisory Ecosystem
+            </span>
+            <div class="network-grid">
+                <div class="partner-badge"><i class="fa-solid fa-building-columns"></i> Banking Network (Demo Partner)</div>
+                <div class="partner-badge"><i class="fa-solid fa-chart-pie"></i> FinTech Alliances (Demo Partner)</div>
+                <div class="partner-badge"><i class="fa-solid fa-shield-halved"></i> NBFC Partners (Demo Partner)</div>
+                <div class="partner-badge"><i class="fa-solid fa-handshake"></i> Housing Finance (Demo Partner)</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ SECTION (VANILLA ACCORDION) -->
+    <section class="faq-section" id="faq">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-subtitle">Got Questions?</span>
+                <h2 class="section-title">Frequently Asked Questions</h2>
+                <p class="section-desc">Find answers to common questions about loan applications and processes.</p>
+            </div>
+
+            <div class="faq-wrapper" data-aos="fade-up">
+                <div class="faq-item active">
+                    <div class="faq-header" onclick="toggleFaq(this)">
+                        <span>1. What documents are required for a loan?</span>
+                        <i class="fa-solid fa-chevron-down faq-icon"></i>
+                    </div>
+                    <div class="faq-body">
+                        Generally, you need basic identity proof (Aadhaar/PAN), address proof, last 3-6 months bank statements, and income proof (salary slips or ITR returns).
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-header" onclick="toggleFaq(this)">
+                        <span>2. How long does the loan process take?</span>
+                        <i class="fa-solid fa-chevron-down faq-icon"></i>
+                    </div>
+                    <div class="faq-body">
+                        Initial consultation and preliminary eligibility check take 24 to 48 hours upon submission of basic mandatory documents.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-header" onclick="toggleFaq(this)">
+                        <span>3. How much loan amount can I get?</span>
+                        <i class="fa-solid fa-chevron-down faq-icon"></i>
+                    </div>
+                    <div class="faq-body">
+                        Loan amounts depend on your monthly net income, existing EMI obligations, credit profile, and the value of collateral (for secured loans).
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-header" onclick="toggleFaq(this)">
+                        <span>4. What is the minimum income requirement?</span>
+                        <i class="fa-solid fa-chevron-down faq-icon"></i>
+                    </div>
+                    <div class="faq-body">
+                        Minimum income requirements typically start from ₹20,000/month for personal loans, though exact criteria vary depending on loan type and city.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-header" onclick="toggleFaq(this)">
+                        <span>5. Can self-employed individuals apply?</span>
+                        <i class="fa-solid fa-chevron-down faq-icon"></i>
+                    </div>
+                    <div class="faq-body">
+                        Yes! Self-employed business owners, doctors, consultants, and professionals can apply with GST registration, business continuity proof, and ITR.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PREMIUM CTA BANNER -->
+    <section class="cta-section">
+        <div class="container" data-aos="zoom-in">
+            <h2 style="color: var(--white); font-size: 2.5rem; margin-bottom: 16px;">Ready to Find the Right Loan?</h2>
+            <p style="color: rgba(255,255,255,0.8); max-width: 600px; margin: 0 auto 30px auto; font-size: 1.1rem;">
+                Tell us your requirement and our dedicated financial team will help you explore suitable financing options immediately.
+            </p>
+            <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+                <button class="btn btn-accent" onclick="openEnquiryModal('General Loan')">
+                    <i class="fa-solid fa-paper-plane"></i> Apply for Loan Now
+                </button>
+                <button class="btn btn-outline-light" onclick="openWhatsAppDirect('General Enquiry')">
+                    <i class="fa-brands fa-whatsapp"></i> Chat on WhatsApp
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section class="contact-section" id="contact">
+        <div class="container">
+            <div class="contact-grid">
+                <!-- Info Card -->
+                <div class="contact-info-card" data-aos="fade-right">
+                    <div>
+                        <span style="color: var(--accent); font-size: 0.85rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase;">Get In Touch</span>
+                        <h2 style="color: var(--white); font-size: 2rem; margin-top: 8px; margin-bottom: 24px;">Contact Our Experts</h2>
+
+                        <div class="contact-item">
+                            <div class="contact-icon"><i class="fa-solid fa-location-dot"></i></div>
+                            <div>
+                                <h4 style="color: var(--white); font-size: 1rem; margin-bottom: 2px;">Office Address</h4>
+                                <p style="color: rgba(255,255,255,0.7); font-size: 0.9rem; margin: 0;">Finora Financial Tower, Bandra Kurla Complex (BKC), Mumbai, Maharashtra 400051</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <div class="contact-icon"><i class="fa-solid fa-phone"></i></div>
+                            <div>
+                                <h4 style="color: var(--white); font-size: 1rem; margin-bottom: 2px;">Phone Support</h4>
+                                <p style="color: rgba(255,255,255,0.7); font-size: 0.9rem; margin: 0;">+91 98765 43210</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <div class="contact-icon"><i class="fa-brands fa-whatsapp"></i></div>
+                            <div>
+                                <h4 style="color: var(--white); font-size: 1rem; margin-bottom: 2px;">WhatsApp Consultation</h4>
+                                <p style="color: rgba(255,255,255,0.7); font-size: 0.9rem; margin: 0;">+91 98765 43210</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <div class="contact-icon"><i class="fa-solid fa-envelope"></i></div>
+                            <div>
+                                <h4 style="color: var(--white); font-size: 1rem; margin-bottom: 2px;">Email Address</h4>
+                                <p style="color: rgba(255,255,255,0.7); font-size: 0.9rem; margin: 0;">info@finorafinance.com</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="background: rgba(255,255,255,0.08); padding: 16px; border-radius: 12px; margin-top: 20px; font-size: 0.85rem; color: rgba(255,255,255,0.8);">
+                        <i class="fa-solid fa-clock me-1" style="color: var(--accent);"></i> Working Hours: Mon – Sat: 9:00 AM – 7:00 PM
+                    </div>
+                </div>
+
+                <!-- Form Card -->
+                <div class="contact-form-card" data-aos="fade-left">
+                    <h3 style="margin-bottom: 20px;">Send Us a Message</h3>
+                    <form class="form-light" onsubmit="handleFormSubmit(event, 'Contact Section')">
+                        <div class="form-grid">
+                            <div>
+                                <label>Full Name *</label>
+                                <input type="text" name="fullName" placeholder="Your Name" required>
+                            </div>
+                            <div>
+                                <label>Phone Number *</label>
+                                <input type="tel" name="mobile" placeholder="10-digit number" pattern="[0-9]{10}" required>
+                            </div>
+                            <div>
+                                <label>Email Address *</label>
+                                <input type="email" name="email" placeholder="name@example.com" required>
+                            </div>
+                            <div>
+                                <label>Loan Required</label>
+                                <select name="loanType">
+                                    <option value="Home Loan">Home Loan</option>
+                                    <option value="Car Loan">Car Loan</option>
+                                    <option value="Personal Loan">Personal Loan</option>
+                                    <option value="Business Loan">Business Loan</option>
+                                    <option value="Other">Other Query</option>
+                                </select>
+                            </div>
+                            <div class="form-group-full">
+                                <label>Message / Requirement Details</label>
+                                <textarea name="message" rows="3" placeholder="Tell us more about your loan requirement..."></textarea>
+                            </div>
+                            <div class="form-group-full">
+                                <button type="submit" class="btn btn-primary" style="width: 100%;">
+                                    <i class="fa-brands fa-whatsapp"></i> Send Enquiry via WhatsApp
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <div class="brand-link" style="margin-bottom: 16px;">
+                        <div class="brand-icon"><i class="fa-solid fa-chart-line"></i></div>
+                        <div>
+                            FINORA
+                            <span class="brand-sub">FINANCE</span>
+                        </div>
+                    </div>
+                    <p style="color: rgba(255,255,255,0.65); font-size: 0.9rem; line-height: 1.6;">
+                        Finora Finance is a modern financial consultation portal assisting clients across India to discover, evaluate, and apply for suitable loan products.
+                    </p>
+                </div>
+
+                <div>
+                    <h4 class="footer-title">Quick Links</h4>
+                    <div class="footer-links">
+                        <a href="#home">Home</a>
+                        <a href="#about">About Us</a>
+                        <a href="#loans">Loan Solutions</a>
+                        <a href="#calculator">EMI Calculator</a>
+                        <a href="#contact">Contact Us</a>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="footer-title">Loan Products</h4>
+                    <div class="footer-links">
+                        <a href="#loans" onclick="showLoanDetails('home')">Home Loan</a>
+                        <a href="#loans" onclick="showLoanDetails('car')">Car Loan</a>
+                        <a href="#loans" onclick="showLoanDetails('personal')">Personal Loan</a>
+                        <a href="#loans" onclick="showLoanDetails('business')">Business Loan</a>
+                        <a href="#loans" onclick="showLoanDetails('education')">Education Loan</a>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="footer-title">Contact Support</h4>
+                    <p style="color: rgba(255,255,255,0.7); font-size: 0.9rem; margin-bottom: 8px;">BKC Financial Tower, Mumbai</p>
+                    <p style="color: rgba(255,255,255,0.7); font-size: 0.9rem; margin-bottom: 8px;">Phone: +91 98765 43210</p>
+                    <p style="color: rgba(255,255,255,0.7); font-size: 0.9rem; margin-bottom: 16px;">Email: info@finorafinance.com</p>
+                </div>
+            </div>
+
+            <div class="disclaimer-box">
+                <strong>FINANCIAL DISCLAIMER:</strong> Loan approval, interest rates, tenure, and terms are strictly subject to borrower eligibility, documentation, credit score assessment, and applicable lender policies. Finora Finance acts as an advisory portal and does not guarantee mandatory approval.
+            </div>
+
+            <div style="border-top: 1px solid rgba(255,255,255,0.08); padding-top: 24px; margin-top: 30px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 14px; font-size: 0.85rem; color: rgba(255,255,255,0.5);">
+                <div>© 2026 Finora Finance. All Rights Reserved.</div>
+                <div style="display: flex; gap: 20px;">
+                    <a href="#" onclick="showToast('Privacy Policy: All customer information is kept confidential.'); return false;" style="color: inherit;">Privacy Policy</a>
+                    <a href="#" onclick="showToast('Terms & Conditions: Advisory services provided as per standards.'); return false;" style="color: inherit;">Terms & Conditions</a>
+                    <a href="#" onclick="showToast('Disclaimer: Finora Finance is a financial advisory consultancy.'); return false;" style="color: inherit;">Disclaimer</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- FLOATING WHATSAPP BUTTON -->
+    <a href="#" class="whatsapp-float" onclick="openWhatsAppDirect('Floating Button'); return false;" aria-label="Chat on WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <!-- BACK TO TOP BUTTON -->
+    <div class="back-to-top" id="backToTop" onclick="scrollToTop()">
+        <i class="fa-solid fa-arrow-up"></i>
+    </div>
+
+    <!-- ENQUIRY MODAL -->
+    <div class="modal-overlay" id="enquiryModal">
+        <div class="modal-container">
+            <button class="modal-close-btn" onclick="closeEnquiryModal()"><i class="fa-solid fa-xmark"></i></button>
+            <h3 style="margin-bottom: 6px;" id="modalLoanTitle">Apply for Loan</h3>
+            <p style="color: var(--muted-text); font-size: 0.9rem; margin-bottom: 24px;">Fill out the details below to connect with our advisor instantly via WhatsApp.</p>
+
+            <form class="form-light" onsubmit="handleFormSubmit(event, 'Modal Form')">
+                <div class="form-grid">
+                    <div>
+                        <label>Full Name *</label>
+                        <input type="text" name="fullName" placeholder="Rahul Sharma" required>
+                    </div>
+                    <div>
+                        <label>Mobile Number *</label>
+                        <input type="tel" name="mobile" placeholder="9876543210" pattern="[0-9]{10}" required>
+                    </div>
+                    <div>
+                        <label>Email Address *</label>
+                        <input type="email" name="email" placeholder="rahul@example.com" required>
+                    </div>
+                    <div>
+                        <label>Selected Loan Type *</label>
+                        <select name="loanType" id="modalLoanTypeSelect" required>
+                            <option value="Home Loan">Home Loan</option>
+                            <option value="Car Loan">Car Loan</option>
+                            <option value="Personal Loan">Personal Loan</option>
+                            <option value="Business Loan">Business Loan</option>
+                            <option value="Education Loan">Education Loan</option>
+                            <option value="Loan Against Property">Loan Against Property</option>
+                            <option value="Gold Loan">Gold Loan</option>
+                            <option value="Other">Other Loan</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label>Loan Amount Required (₹) *</label>
+                        <input type="number" name="amount" id="modalLoanAmount" placeholder="e.g. 500000" required>
+                    </div>
+                    <div>
+                        <label>City *</label>
+                        <input type="text" name="city" placeholder="Mumbai" required>
+                    </div>
+                    <div>
+                        <label>Employment Type</label>
+                        <select name="employment">
+                            <option value="Salaried">Salaried</option>
+                            <option value="Self-Employed">Self-Employed</option>
+                            <option value="Business Owner">Business Owner</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label>Monthly Income (₹)</label>
+                        <input type="number" name="income" placeholder="e.g. 60000">
+                    </div>
+                    <div class="form-group-full" style="margin-top: 10px;">
+                        <button type="submit" class="btn btn-accent" style="width: 100%;">
+                            <i class="fa-brands fa-whatsapp"></i> Continue on WhatsApp
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- LOAN DETAILS MODAL -->
+    <div class="modal-overlay" id="loanDetailsModal">
+        <div class="modal-container">
+            <button class="modal-close-btn" onclick="closeLoanDetailsModal()"><i class="fa-solid fa-xmark"></i></button>
+            <div id="loanDetailsContent">
+                <!-- Dynamically Populated -->
+            </div>
+        </div>
+    </div>
+
+    <!-- AOS ANIMATION LIBRARY -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+   <script src="./script.js"></script>
+</body>
+</html>
